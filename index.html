@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Growth</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans"><div class="text-center py-10 max-w-xl mx-auto">
+  <h1 class="text-4xl font-bold text-sky-400 mb-4">Social Growth</h1>
+  <div class="mb-4 text-red-400 font-semibold">👀 12 people are viewing this right now</div>
+  <img src="https://i.postimg.cc/mkLKf8YQ/1774148133891-2.jpg" class="mx-auto w-full rounded-2xl mb-4">
+  <p class="mb-3 text-white">YOUTUBE COMPLETE MONETIZATION PACKAGE (1K Subscribers AND 4K Hours Watch Time)<br>WITHOUT CHANNEL ACCESS JUST LINK REQUIRED</p>
+  <div class="mb-4">
+    <p class="text-white line-through">PKR 8570</p>
+    <p class="text-4xl font-bold text-red-500">PKR 6000</p>
+    <p class="text-green-400">🔥 30% Special Discount</p>
+    <p class="text-red-400">⚠️ Only 18 Slots Left</p>
+    <div class="mt-4 bg-white text-black p-3 rounded-xl">
+      <p>⏳ Offer Ends In:</p>
+      <p id="timer" class="font-bold">24:00:00</p>
+    </div>
+  </div>
+  <button onclick="showForm()" class="bg-white text-black px-6 py-3 rounded-xl mb-3 w-full">Buy Now</button>  <!-- WhatsApp Direct Contact Button remains --><a href="https://wa.me/923322780897" target="_blank" class="block bg-green-500 text-white py-3 rounded-xl w-full mb-6">Chat on WhatsApp</a>
+
+  <p>⭐ 4.7 / 5</p>
+  <button onclick="toggleReviews()" class="underline text-sky-400">256 Reviews</button>
+</div><!-- REVIEWS --><div id="reviewsSection" class="hidden max-w-xl mx-auto p-5">
+  <div id="reviews"></div>
+</div><!-- PAYMENT FORM --><div id="paymentForm" class="hidden max-w-xl mx-auto mt-6 p-5 border border-gray-700 rounded-2xl">
+  <h2 class="text-xl font-bold mb-3">Payment Details</h2>
+  <p>Account: EASYPAESA</p>
+  <p>Name: RABIA PERVEEN</p>
+  <p class="mb-3">Account Number: 03174744895</p>
+  <p class="mb-3">After placing your order, our team will contact you within 30 minutes on the WhatsApp number you provide.</p>
+  <input type="text" placeholder="Transaction ID" class="w-full p-2 mb-2 rounded text-black">
+  <input type="email" placeholder="Email" class="w-full p-2 mb-2 rounded text-black">
+  <input type="text" placeholder="WhatsApp Number" class="w-full p-2 mb-2 rounded text-black">
+  <input type="file" class="mb-3">
+  <button class="bg-white text-black px-5 py-2 rounded w-full">Submit</button>
+</div><script>
+function showForm(){
+  document.getElementById('paymentForm').classList.remove('hidden');
+  window.scrollTo({top:document.getElementById('paymentForm').offsetTop,behavior:'smooth'});
+}
+function toggleReviews(){
+  const sec=document.getElementById('reviewsSection');
+  sec.classList.toggle('hidden');
+  if(!sec.classList.contains('hidden')){
+    window.scrollTo({top:sec.offsetTop,behavior:'smooth'});
+  }
+}
+// TIMER 24H
+let t=86400;
+setInterval(()=>{
+ let h=Math.floor(t/3600),m=Math.floor((t%3600)/60),s=t%60;
+ document.getElementById('timer').innerText=`${h}:${m<10?'0'+m:m}:${s<10?'0'+s:s}`;
+ if(t>0)t--;
+},1000);
+
+// REVIEWS
+const names=["Aliyan Khan","Basit Sheikh","Daniyal Shah","Ehsan Abbasi","Faisal Malik","Gohar Butt","Hadi Qureshi","Ibrahim Farooq","Junaid Hussain","Kashif Raza","Luqman Tariq","Muneeb Nawaz","Noman Iqbal","Omar Aslam","Parsa Zafar","Qadeer Yousaf","Rizwan Rehman","Sami Siddiqui","Taimoor Chaudhry","Usaid Hashmi"];
+const positiveComments=["Excellent service, fast delivery! Loved it!","Amazing experience, team delivered perfectly!","Highly recommend, very satisfied with service!","Super quick response and amazing package!","Top-notch work, exactly as promised!","Great quality, worth every penny!","Very reliable, would order again!","Impressed by the professionalism and speed!","Best service, exceeded expectations!","Fantastic, exactly what I needed!"];
+const reviewsDiv=document.getElementById('reviews');
+for(let i=0;i<256;i++){
+ let name=names[i%names.length];
+ let stars=[2,3,4,5][Math.floor(Math.random()*4)];
+ let text="";
+ if(stars<=3){ text="Delivery was late, minor issues but overall experience okay."; }
+ else { text=positiveComments[Math.floor(Math.random()*positiveComments.length)]; }
+ if(Math.random()<0.2){ text=""; }
+ let div=document.createElement('div');
+ div.className="border border-gray-700 p-3 mb-2 rounded text-white";
+ div.innerHTML=`<b>${name}</b><br>${text}${text?'<br>':''}${'⭐'.repeat(stars)}`;
+ reviewsDiv.appendChild(div);
+}
+</script><!-- FOOTER INFO --><div class="max-w-xl mx-auto mt-10 p-5 text-center">
+  <a href="https://www.facebook.com/share/18SMBUR9kG/" target="_blank" class="text-white underline block mb-4">Visit Our Facebook Page</a>
+  <h2 class="text-2xl font-bold mb-3">Why Choose Us?</h2>
+  <p class="text-white">
+    Social Growth has been working in the market since 2020 with a strong reputation and trusted customer base.
+    We provide completely secure services and never ask for your account access. Everything is done through your provided link only.
+    Our services are fast, reliable, and trusted by hundreds of satisfied customers.
+    We focus on quality delivery, transparency, and customer satisfaction.
+  </p>
+</div>
+</body>
+        </html>
